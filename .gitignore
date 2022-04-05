@@ -1,3 +1,5 @@
 .env
 .idea
 .git
+/catalog/migrations
+/django_fight_site/settings.py

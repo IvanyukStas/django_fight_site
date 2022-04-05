@@ -5,10 +5,10 @@ from django.urls import reverse
 
 
 class Fighter(models.Model):
-    first_name = models.CharField(max_length=50, help_text='Enter the first name of figther', null=True, blank=True)
+    first_name = models.CharField(max_length=50, help_text='Enter the first name of figther')
     nick_name = models.CharField(max_length=50, help_text='Enter the nick name of figther', null=True, blank=True)
-    last_name = models.CharField(max_length=50, help_text='Enter the last name of figther', null=True, blank=True)
-    date_of_birth = models.DateField()
+    last_name = models.CharField(max_length=50, help_text='Enter the last name of figther')
+    date_of_birth = models.DateField(null=True, blank=True)
     height = models.CharField(max_length=10, help_text='Enter the height of figther', null=True, blank=True)
     wieght = models.CharField(max_length=10, help_text='Enter the wieght of figther', null=True, blank=True)
 
@@ -31,10 +31,10 @@ class Fighter(models.Model):
 
 
 class Record(models.Model):
-    wins = models.IntegerField(null=True, blank=True)
-    losses = models.IntegerField(null=True, blank=True)
-    draws = models.IntegerField(null=True, blank=True)
-    fighter_id = models.ForeignKey('Fighter', on_delete=models.SET_NULL, null=True)
+    wins = models.IntegerField(default='0', null=True, blank=True)
+    losses = models.IntegerField(default=0, null=True, blank=True)
+    draws = models.IntegerField(default=0, null=True, blank=True)
+    fighter_id = models.OneToOneField('Fighter', on_delete=models.SET_NULL, null=True)
 
 
     class Meta:
