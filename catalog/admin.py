@@ -15,7 +15,7 @@ class RecordInline(admin.TabularInline):
 
 @admin.register(Fighter)
 class FighterAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'nick_name', 'last_name', 'display_record')
+    list_display = ('first_name', 'nick_name', 'last_name', 'display_record', 'cover')
     inlines = [RecordInline]
 
 

@@ -79,7 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'django_mma',
-        'USER': 'dj_user',
+        'USER': 'django_test',
         'PASSWORD': 'a1234567',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -123,6 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/MEDIA/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

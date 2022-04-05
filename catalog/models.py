@@ -8,6 +8,7 @@ class Fighter(models.Model):
     first_name = models.CharField(max_length=50, help_text='Enter the first name of figther')
     nick_name = models.CharField(max_length=50, help_text='Enter the nick name of figther', null=True, blank=True)
     last_name = models.CharField(max_length=50, help_text='Enter the last name of figther')
+    cover = models.ImageField(null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     height = models.CharField(max_length=10, help_text='Enter the height of figther', null=True, blank=True)
     wieght = models.CharField(max_length=10, help_text='Enter the wieght of figther', null=True, blank=True)
