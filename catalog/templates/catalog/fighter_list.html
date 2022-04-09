@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Book List</h1>
+
+    {% if fighter_list %}
+    <ul>
+
+      {% for fighter in fighter_list %}
+      <li>
+        <a href="{{ fighter.get_absolute_url }}">{{ fighter.first_name }}  {{ fighter.last_name }}</a> Record: ({{fighter.display_record}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no fighters in catalog.</p>
+    {% endif %}
+{% endblock %}
